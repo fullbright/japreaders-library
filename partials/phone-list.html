@@ -1,0 +1,40 @@
+<md-content>
+  <div class="md-padding" layout="column">
+    <div layout="row" class="md-padding" layout-align="center center" flex>
+		<div style="width:500px;" layout-margin>
+			<form ng-submit="$event.preventDefault()">
+			  <md-autocomplete
+				  ng-disabled="isDisabled"
+				  md-no-cache="noCache"
+				  md-selected-item="selectedItem"
+				  md-search-text="query"
+				  md-items="item in querySearch(query)"
+				  md-item-text="item.name"
+				  placeholder="Which book are you looking for ?">
+				<span md-highlight-text="searchText">{{item.name}}</span>
+			  </md-autocomplete>
+			</form>
+		</div>
+		<div layout-margin>
+			<md-select placeholder="Choose" ng-model="orderProp">
+				<md-option value="name">Alphabetical</md-option>
+				<md-option value="age">Newest</md-option>
+			</md-select>
+		</div>
+			
+		
+    </div>
+	
+    <div layout="row" layout-wrap>
+	<!--Body content-->
+		<md-card ng-repeat="phone in phones | filter:query | orderBy:orderProp"
+		class="" flex="30">
+			<a href="#/phones/{{phone.id}}"><img ng-src="{{phone.imageUrl}}" class="md-card-image"></a>
+			<md-card-content>
+				<h2 class="md-title"><a href="#/phones/{{phone.id}}">{{phone.name}}</a></h2>
+				<p>{{phone.snippet}}</p>
+			</md-card-content>
+		</md-card>
+    </div>
+  </div>
+</md-content>
