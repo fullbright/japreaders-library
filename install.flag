@@ -1,0 +1,12 @@
+Initializing MySQL
+Creating database
+##########################################
+########### INFORMATION USED #############
+##########################################
+MYSQL_ROOT_PASSWORD: Helie8Uux9ze
+MYSQL_DATABASE: drupalabs
+DRUPAL_USER: drupalabs
+DRUPAL_PASSWORD: ung0Oac8cae1
+##########################################
+##########################################
+Configuring root user
